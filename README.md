@@ -7,3 +7,10 @@ The treasure hunt is set up by placing hidden notes with 3-digit codes in strate
 Finally, upload the code to any very basic web hosting service that can be accessed via the phone being used in the treasure hunt. Then navigate to the introduction on the phone, and begin the treasure hunt.
 
 Good luck.
+
+
+# Royalty-Free Sounds Used
+
+All of the sound effects used were listed as "royalty-free" sound effects from https://pixabay.com/sound-effects/
+
+
