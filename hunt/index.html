@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏴‍☠️ Treasure Hunt Adventure! 🏴‍☠️</h1>
+        
+        <div class="timer-section">
+            <h2>Time Remaining</h2>
+            <div id="timer" class="timer">5:00</div>
+        </div>
+
+        <div class="progress-section">
+            <h3>Treasures Found: <span id="treasuresFound">0</span> / <span id="totalTreasures">5</span></h3>
+            <div class="progress-bar">
+                <div id="progressBar" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="code-entry">
+            <h3>Enter Code</h3>
+            <input type="text" id="codeInput" maxlength="3" pattern="\d{3}" placeholder="###" autocomplete="off">
+            <button id="submitBtn">Submit Code</button>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <div class="hints-section">
+            <h3>Current Hint</h3>
+            <p id="currentHint" class="hint-text">Find the first clue to begin your adventure!</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Points:</span>
+                <span id="points" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Penalties:</span>
+                <span id="penalties" class="stat-value">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2 id="gameOverTitle"></h2>
+            <p id="gameOverMessage"></p>
+            <button id="restartBtn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

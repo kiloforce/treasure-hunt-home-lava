@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Floor is Lava - Treasure Hunt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="startCurtain" class="start-curtain">
+        <div class="curtain-content">
+            <h1>🔥 THE FLOOR IS LAVA! 🔥</h1>
+            <p class="curtain-message">Tap to Begin Your Escape</p>
+            <div class="tap-indicator">👆</div>
+        </div>
+    </div>
+    
+    <audio id="lavaAudio" loop>
+        <source src="sounds/lava.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="flames-container">
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+    </div>
+    
+    <div class="container">
+        <h1 class="title">🔥 THE FLOOR IS LAVA! 🔥</h1>
+        
+        <div class="warning-box">
+            <h2>⚠️ EMERGENCY ALERT ⚠️</h2>
+            <p class="urgent">THE HOUSE IS ON FIRE!</p>
+        </div>
+        
+        <div class="story">
+            <p class="intro-text">
+                The floor beneath you is turning to MOLTEN LAVA! You have <strong>ONLY 5 MINUTES</strong> 
+                to escape the house before it's completely consumed by flames!
+            </p>
+            
+            <p class="intro-text">
+                But there's hope! Hidden throughout the burning house are <strong>SAFE PLATFORMS</strong> 
+                marked with secret numerical codes. You must jump from platform to platform in the 
+                <strong>CORRECT ORDER</strong> to create a safe path to freedom!
+            </p>
+            
+            <div class="danger-list">
+                <h3>🚨 SURVIVAL RULES 🚨</h3>
+                <ul>
+                    <li><strong>Find the codes</strong> hidden on papers throughout the house</li>
+                    <li><strong>Enter them in the correct order</strong> to jump safely from treasure to treasure</li>
+                    <li><strong>Wrong order = Fall into the lava!</strong> Lose precious time!</li>
+                    <li><strong>Invalid codes = Step on hot coals!</strong> Lose time!</li>
+                    <li><strong>Some codes are traps</strong> that will collapse beneath you!</li>
+                    <li><strong>Bonus codes</strong> reveal semi-fireproof boots (extra time!)</li>
+                </ul>
+            </div>
+            
+            <div class="timer-warning">
+                <p>⏰ <strong>5 MINUTES TO ESCAPE</strong> ⏰</p>
+                <p>Can you find all the treasures and survive?</p>
+                <p class="small">Or will you be consumed by the flames...</p>
+            </div>
+        </div>
+        
+        <button id="startBtn" class="start-button">
+            🔥 START THE ESCAPE! 🔥
+        </button>
+        
+        <div class="footer">
+            <p>Remember: <em>Only one path is safe. Choose wisely.</em></p>
+        </div>
+    </div>
+    
+    <script>
+        const audio = document.getElementById('lavaAudio');
+        const curtain = document.getElementById('startCurtain');
+        audio.volume = 0.3;
+        
+        // Handle curtain click/tap
+        curtain.addEventListener('click', () => {
+            // Start audio
+            audio.play().catch(err => console.log('Audio play failed:', err));
+            
+            // Remove curtain with animation
+            curtain.classList.add('fade-out');
+            setTimeout(() => {
+                curtain.style.display = 'none';
+            }, 500);
+        });
+        
+        document.getElementById('startBtn').addEventListener('click', () => {
+            // Fade out audio before transition
+            const fadeOut = setInterval(() => {
+                if (audio.volume > 0.1) {
+                    audio.volume -= 0.1;
+                } else {
+                    clearInterval(fadeOut);
+                    audio.pause();
+                }
+            }, 50);
+            
+            // Add a dramatic effect before transitioning
+            document.body.classList.add('starting');
+            setTimeout(() => {
+                window.location.href = '../hunt/index.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
