@@ -16,12 +16,12 @@ All of the sound effects used were listed as "royalty-free" sound effects from h
 
 # Sample Screenshots
 
-https://i.imgur.com/YfKIsWU.png
+![Press to Continue](https://i.imgur.com/YfKIsWU.png)
 
-https://i.imgur.com/s7iZZ9V.png
+![Intro](https://i.imgur.com/s7iZZ9V.png)
 
-https://i.imgur.com/R9bJvXo.png
+![Press to Start](https://i.imgur.com/R9bJvXo.png)
 
-https://i.imgur.com/qxAN1by.png
+![Game Play](https://i.imgur.com/qxAN1by.png)
 
 
